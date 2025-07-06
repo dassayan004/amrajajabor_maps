@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "83285692536",
+    "project_id": "amrajajabor-c97b7",
+    "storage_bucket": "amrajajabor-c97b7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83285692536:android:2eecb063f088c619899d8d",
+        "android_client_info": {
+          "package_name": "com.amrajajabor.amrajajabor_maps"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKuA_Hcb9MldbMVnUocrn4VDILjq0BLkE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

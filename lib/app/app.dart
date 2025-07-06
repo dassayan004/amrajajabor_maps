@@ -3,18 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_core/firebase_core.dart';
 
+import '../firebase_options.dart';
+import 'controllers/auth_controller.dart';
 import 'routes/app_pages.dart';
 import 'themes/theme.dart';
 
 Future<Widget> initializeApp() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: Environment.getEnvFileName());
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await GoogleFonts.pendingFonts([
     GoogleFonts.dmSans(),
     GoogleFonts.secularOne(),
   ]);
-
+  Get.put(AuthController());
   return const MyApp();
 }
 

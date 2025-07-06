@@ -1,3 +1,4 @@
+import 'package:amrajajabor_maps/app/controllers/auth_controller.dart';
 import 'package:flutter/animation.dart';
 import 'package:get/get.dart';
 
@@ -24,10 +25,14 @@ class SplashController extends GetxController
 
     animationController.forward();
 
-    // final apiKey = supabaseUrl;
-    // print(apiKey);
     Future.delayed(const Duration(seconds: 3), () {
-      Get.offAllNamed(Routes.HOME);
+      final user = AuthController.to.firebaseUser.value;
+
+      if (user != null) {
+        Get.offAllNamed(Routes.HOME);
+      } else {
+        Get.offAllNamed(Routes.SIGNUP);
+      }
     });
   }
 
