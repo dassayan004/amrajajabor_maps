@@ -1,0 +1,34 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import 'routes/app_pages.dart';
+import 'themes/theme.dart';
+
+Future<Widget> initializeApp() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await GoogleFonts.pendingFonts([
+    GoogleFonts.dmSans(),
+    GoogleFonts.secularOne(),
+  ]);
+
+  return const MyApp();
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Application",
+
+      themeMode: ThemeMode.system,
+      theme: TAppTheme.lightTheme,
+      darkTheme: TAppTheme.darkTheme,
+      initialRoute: AppPages.INITIAL,
+      getPages: AppPages.routes,
+    );
+  }
+}
