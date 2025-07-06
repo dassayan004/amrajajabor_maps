@@ -1,16 +1,18 @@
-# amrajajabor_maps
+# 🗺️ amrajajabor_maps
 
-A new Flutter project.
+A Flutter project that demonstrates map-based functionality with clean architecture and environment configuration support using `.env` files.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 Getting Started
 
-A few resources to get you started if this is your first Flutter project:
+This project uses [`flutter_dotenv`](https://pub.dev/packages/flutter_dotenv) to manage environment variables and supports different environments (dev, staging, prod) via build-time flavor injection.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 📁 Environment Setup
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Create your `.env` files at the root level:
+
+```bash
+.env            # default (used for dev)
+.env.staging    # for staging
+.env.prod       # for production

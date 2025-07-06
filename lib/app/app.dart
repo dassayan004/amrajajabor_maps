@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Application",
       defaultTransition: Transition.fadeIn,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
       initialRoute: AppPages.INITIAL,

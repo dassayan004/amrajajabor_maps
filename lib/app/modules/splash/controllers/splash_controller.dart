@@ -24,6 +24,8 @@ class SplashController extends GetxController
 
     animationController.forward();
 
+    // final apiKey = supabaseUrl;
+    // print(apiKey);
     Future.delayed(const Duration(seconds: 3), () {
       Get.offAllNamed(Routes.HOME);
     });
