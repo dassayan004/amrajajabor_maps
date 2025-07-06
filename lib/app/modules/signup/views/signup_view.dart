@@ -57,12 +57,25 @@ class SignupView extends GetView<SignupController> {
                           style: const TextStyle(color: Colors.red),
                         ),
                       const SizedBox(height: 20),
-                      controller.isLoading.value
-                          ? const Center(child: CircularProgressIndicator())
-                          : ElevatedButton(
-                              onPressed: controller.login,
-                              child: const Text("Login"),
-                            ),
+
+                      ElevatedButton(
+                        onPressed: controller.isLoading.value
+                            ? null
+                            : controller.login,
+
+                        child: controller.isLoading.value
+                            ? const SizedBox(
+                                width: 20,
+                                height: 20,
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    Colors.white,
+                                  ),
+                                ),
+                              )
+                            : const Text("Login"),
+                      ),
                     ],
                   ),
                 ),
