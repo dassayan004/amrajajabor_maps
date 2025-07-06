@@ -1,4 +1,6 @@
+import 'package:amrajajabor_maps/app/env/env.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -7,6 +9,7 @@ import 'themes/theme.dart';
 
 Future<Widget> initializeApp() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: Environment.getEnvFileName());
   await GoogleFonts.pendingFonts([
     GoogleFonts.dmSans(),
     GoogleFonts.secularOne(),
@@ -23,8 +26,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Application",
-
-      themeMode: ThemeMode.system,
+      defaultTransition: Transition.fadeIn,
+      themeMode: ThemeMode.light,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
       initialRoute: AppPages.INITIAL,

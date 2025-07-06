@@ -1,3 +1,4 @@
+import 'package:amrajajabor_maps/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -9,13 +10,15 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('HomeView'), centerTitle: true),
+      appBar: AppBar(title: const Text('HomeView')),
       body: const Center(
         child: Text('HomeView is working', style: TextStyle(fontSize: 20)),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.home),
+        onPressed: () {
+          Get.offNamed(Routes.SIGNUP.toString());
+        },
+        child: Icon(Icons.login_rounded),
       ),
     );
   }
