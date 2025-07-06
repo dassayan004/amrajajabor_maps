@@ -1,5 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../constants/colors.dart';
 
 class AuthController extends GetxController {
   static AuthController get to => Get.find();
@@ -17,8 +20,18 @@ class AuthController extends GetxController {
   Future<void> signIn(String email, String password) async {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
+      final user = AuthController.to.firebaseUser.value;
+      Get.snackbar(
+        'Login Successful',
+        'Welcome ${user?.email}!',
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: TColors.success,
+        colorText: Colors.white,
+      );
+    } on FirebaseAuthException catch (e) {
+      Get.snackbar('Login Failed', e.message ?? 'An unknown error occurred');
     } catch (e) {
-      Get.snackbar('Login failed', e.toString());
+      Get.snackbar('Login Failed', 'Unexpected error: ${e.toString()}');
     }
   }
 
@@ -28,8 +41,19 @@ class AuthController extends GetxController {
         email: email,
         password: password,
       );
+      final user = AuthController.to.firebaseUser.value;
+
+      Get.snackbar(
+        'Signed up successfully',
+        'Welcome ${user?.email}!',
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: TColors.success,
+        colorText: Colors.white,
+      );
+    } on FirebaseAuthException catch (e) {
+      Get.snackbar('Signup Failed', e.message ?? 'An unknown error occurred');
     } catch (e) {
-      Get.snackbar('Signup failed', e.toString());
+      Get.snackbar('Signup Failed', 'Unexpected error: ${e.toString()}');
     }
   }
 
