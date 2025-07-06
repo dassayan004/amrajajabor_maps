@@ -17,6 +17,7 @@ class TAppTheme {
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     disabledColor: TColors.grey,
+    colorScheme: ColorScheme.light(primary: TColors.primary),
     brightness: Brightness.light,
     primaryColor: TColors.primary,
     textTheme: GoogleFonts.poppinsTextTheme(TTextTheme.lightTextTheme),
@@ -34,6 +35,7 @@ class TAppTheme {
     useMaterial3: true,
     disabledColor: TColors.grey,
     brightness: Brightness.dark,
+    colorScheme: ColorScheme.dark(primary: TColors.primary),
     primaryColor: TColors.primary,
     textTheme: GoogleFonts.poppinsTextTheme(TTextTheme.darkTextTheme),
     chipTheme: TChipTheme.darkChipTheme,

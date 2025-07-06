@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../constants/colors.dart';
-import '../../../routes/app_pages.dart';
 
 class SignupController extends GetxController {
   // Input controllers
@@ -48,7 +47,7 @@ class SignupController extends GetxController {
     errorMessage.value = '';
 
     try {
-      await AuthController.to.signIn(email, password);
+      await AuthController.to.signUp(email, password);
       Get.snackbar(
         'Login Successful',
         'Welcome ${user?.displayName}!',
@@ -56,7 +55,6 @@ class SignupController extends GetxController {
         backgroundColor: TColors.success,
         colorText: Colors.white,
       );
-      Get.offAllNamed(Routes.HOME);
     } catch (e) {
       errorMessage.value = 'Login failed: ${e.toString()}';
     } finally {
