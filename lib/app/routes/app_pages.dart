@@ -21,14 +21,14 @@ class AppPages {
       binding: SplashBinding(),
     ),
     GetPage(
-      name: _Paths.HOME,
-      page: () => const HomeView(),
-      binding: HomeBinding(),
-    ),
-    GetPage(
       name: _Paths.SIGNUP,
       page: () => const SignupView(),
       binding: SignupBinding(),
+    ),
+    GetPage(
+      name: _Paths.HOME,
+      page: () => const HomeView(),
+      binding: HomeBinding(),
     ),
   ];
 }
