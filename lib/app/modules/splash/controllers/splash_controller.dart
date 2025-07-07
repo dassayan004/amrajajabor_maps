@@ -23,16 +23,6 @@ class SplashController extends GetxController
     );
 
     animationController.forward();
-
-    // Reactive auth state handling
-    ever(AuthController.to.firebaseUser, (user) {
-      if (user != null) {
-        Get.offAllNamed(Routes.HOME);
-      } else {
-        Get.offAllNamed(Routes.SIGNUP);
-      }
-    });
-
     // Optionally, trigger the first value after splash delay
     Future.delayed(const Duration(seconds: 3), () {
       final user = AuthController.to.firebaseUser.value;

@@ -1,3 +1,4 @@
+import 'package:amrajajabor_maps/app/constants/image_strings.dart';
 import 'package:amrajajabor_maps/app/widgets/theme_changer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -77,6 +78,20 @@ class SignupView extends GetView<SignupController> {
                                 ),
                               )
                             : const Text("Login"),
+                      ),
+                      const SizedBox(height: 12),
+
+                      // 🔽 Google Sign-In Button
+                      SizedBox(
+                        width: double.infinity, // 👈 Makes it full width
+                        child: OutlinedButton.icon(
+                          onPressed: controller.googleSignIn,
+                          icon: Image.asset(TImages.google, height: 20),
+                          label: const Text('continue with Google'),
+                          style: OutlinedButton.styleFrom(
+                            padding: const EdgeInsets.all(12),
+                          ),
+                        ),
                       ),
                     ],
                   ),
