@@ -24,14 +24,23 @@ class AuthController extends GetxController {
       Get.snackbar(
         'Login Successful',
         'Welcome ${user?.email}!',
-        snackPosition: SnackPosition.BOTTOM,
         backgroundColor: TColors.success,
         colorText: Colors.white,
       );
     } on FirebaseAuthException catch (e) {
-      Get.snackbar('Login Failed', e.message ?? 'An unknown error occurred');
+      Get.snackbar(
+        'Login Failed',
+        e.message ?? 'An unknown error occurred',
+        backgroundColor: TColors.error,
+        colorText: Colors.white,
+      );
     } catch (e) {
-      Get.snackbar('Login Failed', 'Unexpected error: ${e.toString()}');
+      Get.snackbar(
+        'Login Failed',
+        'Unexpected error: ${e.toString()}',
+        backgroundColor: TColors.error,
+        colorText: Colors.white,
+      );
     }
   }
 
@@ -46,14 +55,23 @@ class AuthController extends GetxController {
       Get.snackbar(
         'Signed up successfully',
         'Welcome ${user?.email}!',
-        snackPosition: SnackPosition.BOTTOM,
         backgroundColor: TColors.success,
         colorText: Colors.white,
       );
     } on FirebaseAuthException catch (e) {
-      Get.snackbar('Signup Failed', e.message ?? 'An unknown error occurred');
+      Get.snackbar(
+        'Signup Failed',
+        e.message ?? 'An unknown error occurred',
+        backgroundColor: TColors.error,
+        colorText: Colors.white,
+      );
     } catch (e) {
-      Get.snackbar('Signup Failed', 'Unexpected error: ${e.toString()}');
+      Get.snackbar(
+        'Signup Failed',
+        'Unexpected error: ${e.toString()}',
+        backgroundColor: TColors.error,
+        colorText: Colors.white,
+      );
     }
   }
 
