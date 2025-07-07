@@ -64,6 +64,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '83285692536',
     projectId: 'amrajajabor-c97b7',
     storageBucket: 'amrajajabor-c97b7.firebasestorage.app',
+    androidClientId: '83285692536-s0osvv64k1stc373rgbm2nfql0a6ir48.apps.googleusercontent.com',
+    iosClientId: '83285692536-0a09l1mn89epr34o6o4ku370l56kggnd.apps.googleusercontent.com',
     iosBundleId: 'com.amrajajabor.amrajajaborMaps',
   );
 
@@ -73,6 +75,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '83285692536',
     projectId: 'amrajajabor-c97b7',
     storageBucket: 'amrajajabor-c97b7.firebasestorage.app',
+    androidClientId: '83285692536-s0osvv64k1stc373rgbm2nfql0a6ir48.apps.googleusercontent.com',
+    iosClientId: '83285692536-0a09l1mn89epr34o6o4ku370l56kggnd.apps.googleusercontent.com',
     iosBundleId: 'com.amrajajabor.amrajajaborMaps',
   );
 
@@ -85,4 +89,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'amrajajabor-c97b7.firebasestorage.app',
     measurementId: 'G-R7T47X94L4',
   );
+
 }

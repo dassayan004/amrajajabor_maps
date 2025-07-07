@@ -8,10 +8,8 @@ class ThemeChangerDropDown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeController = Get.find<ThemeController>();
-
     return Obx(() {
-      final mode = themeController.themeMode;
+      final mode = ThemeController.to.themeMode;
 
       IconData currentIcon;
       switch (mode) {
@@ -30,7 +28,7 @@ class ThemeChangerDropDown extends StatelessWidget {
         tooltip: 'Change Theme',
         icon: Icon(currentIcon),
         initialValue: mode,
-        onSelected: (mode) => themeController.setTheme(mode),
+        onSelected: (mode) => ThemeController.to.setTheme(mode),
         itemBuilder: (context) => [
           PopupMenuItem(
             value: ThemeMode.light,
