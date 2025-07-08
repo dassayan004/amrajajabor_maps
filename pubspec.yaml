@@ -84,6 +84,7 @@ flutter:
     - assets/images/google.png
     - assets/images/logo_white.png
     - assets/images/logo_black.png
+    - assets/images/auth-page.jpg
     - assets/animations/loading.json
   #   - images/a_dot_ham.jpeg
 

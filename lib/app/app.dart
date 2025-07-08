@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: "Application",
-        defaultTransition: Transition.fadeIn,
+        defaultTransition: Transition.cupertino,
         initialBinding: GeneralBindings(),
         themeMode: ThemeController.to.themeMode,
         theme: TAppTheme.lightTheme,
