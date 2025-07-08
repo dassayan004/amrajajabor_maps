@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 class GeneralBindings extends Bindings {
   @override
   void dependencies() {
-    // Get.put<AuthController>(AuthController());
     Get.put<NetworkManager>(NetworkManager());
+    // Get.put<LocationManager>(LocationManager());
     // Get.put<ThemeController>(ThemeController());
   }
 }
