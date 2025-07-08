@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
     return Obx(() {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        title: "Application",
+        title: "Amra Jajabor",
         defaultTransition: Transition.cupertino,
         initialBinding: GeneralBindings(),
         themeMode: ThemeController.to.themeMode,
