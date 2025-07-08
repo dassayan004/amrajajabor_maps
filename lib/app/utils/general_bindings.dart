@@ -6,6 +6,5 @@ class GeneralBindings extends Bindings {
   void dependencies() {
     Get.put<NetworkManager>(NetworkManager());
     // Get.put<LocationManager>(LocationManager());
-    // Get.put<ThemeController>(ThemeController());
   }
 }

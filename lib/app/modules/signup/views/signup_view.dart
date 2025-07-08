@@ -54,14 +54,17 @@ class SignupView extends GetView<SignupController> {
                     Text(
                       'Welcome to AmaraJajabor',
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(fontSize: TSizes.fontSizeLg),
                     ),
                     SizedBox(height: 20),
                     SizedBox(
                       width: double.infinity,
                       child: OutlinedButton.icon(
                         onPressed: controller.googleSignIn,
-                        icon: Image.asset(TImages.google, height: 20),
+                        icon: Image.asset(
+                          TImages.google,
+                          height: TSizes.fontSizeLg,
+                        ),
                         label: const Text('Sign in with Google'),
                         style: OutlinedButton.styleFrom(
                           padding: const EdgeInsets.all(14),

@@ -1,4 +1,5 @@
 import 'package:amrajajabor_maps/app/controllers/auth_controller.dart';
+import 'package:amrajajabor_maps/app/widgets/avatar.dart';
 import 'package:amrajajabor_maps/app/widgets/theme_changer.dart';
 import 'package:flutter/material.dart';
 
@@ -34,8 +35,15 @@ class HomeView extends GetView<HomeController> {
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 20),
+                GoogleUserAvatar(
+                  imageUrl: currentUser.photoURL,
+                  displayName: currentUser.displayName!,
+                  size: 60,
+                ),
+                const SizedBox(height: 12),
                 _infoRow(context, 'UID', currentUser.uid),
-                _infoRow(context, 'Email', currentUser.email ?? 'N/A'),
+                _infoRow(context, 'Name', currentUser.displayName),
+                _infoRow(context, 'Email', currentUser.email),
                 _infoRow(
                   context,
                   'Is Email Verified',
@@ -72,7 +80,7 @@ class HomeView extends GetView<HomeController> {
   }
 }
 
-Widget _infoRow(BuildContext context, String label, String value) {
+Widget _infoRow(BuildContext context, String label, String? value) {
   return Padding(
     padding: const EdgeInsets.symmetric(vertical: 4.0),
     child: RichText(
