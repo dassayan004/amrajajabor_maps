@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../widgets/applogo.dart';
 import '../controllers/splash_controller.dart';
 
 class SplashView extends GetView<SplashController> {
@@ -11,7 +12,7 @@ class SplashView extends GetView<SplashController> {
       body: Center(
         child: ScaleTransition(
           scale: controller.scaleAnimation,
-          child: const FlutterLogo(size: 100),
+          child: AppLogo(height: 150),
         ),
       ),
     );

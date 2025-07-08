@@ -3,6 +3,7 @@ import 'package:amrajajabor_maps/app/widgets/theme_changer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../widgets/applogo.dart';
 import '../controllers/signup_controller.dart';
 
 class SignupView extends GetView<SignupController> {
@@ -17,87 +18,36 @@ class SignupView extends GetView<SignupController> {
         child: SingleChildScrollView(
           // Enables scrolling on small screens
           padding: const EdgeInsets.all(16.0),
-          child: Obx(
-            () => Column(
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [FlutterLogo(size: 80)],
-                ),
-                const SizedBox(height: 20),
-                Form(
-                  child: Column(
-                    spacing: 12,
-
-                    children: [
-                      TextField(
-                        controller: controller.emailController,
-                        decoration: const InputDecoration(labelText: "Email"),
-                      ),
-                      if (controller.emailError.isNotEmpty)
-                        Text(
-                          controller.emailError.value,
-                          style: const TextStyle(color: Colors.red),
-                        ),
-                      TextField(
-                        controller: controller.passwordController,
-                        obscureText: !controller.showPassword.value,
-                        decoration: InputDecoration(
-                          labelText: 'Password',
-                          suffixIcon: IconButton(
-                            icon: Icon(
-                              controller.showPassword.value
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
-                            ),
-                            onPressed: controller.showPassword.toggle,
-                          ),
-                        ),
-                      ),
-                      if (controller.passwordError.isNotEmpty)
-                        Text(
-                          controller.passwordError.value,
-                          style: const TextStyle(color: Colors.red),
-                        ),
-                      const SizedBox(height: 20),
-
-                      ElevatedButton(
-                        onPressed: controller.isLoading.value
-                            ? null
-                            : controller.login,
-
-                        child: controller.isLoading.value
-                            ? const SizedBox(
-                                width: 20,
-                                height: 20,
-                                child: CircularProgressIndicator(
-                                  strokeWidth: 2,
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    Colors.white,
-                                  ),
-                                ),
-                              )
-                            : const Text("Login"),
-                      ),
-                      const SizedBox(height: 12),
-
-                      // 🔽 Google Sign-In Button
-                      SizedBox(
-                        width: double.infinity, // 👈 Makes it full width
-                        child: OutlinedButton.icon(
-                          onPressed: controller.googleSignIn,
-                          icon: Image.asset(TImages.google, height: 20),
-                          label: const Text('continue with Google'),
-                          style: OutlinedButton.styleFrom(
-                            padding: const EdgeInsets.all(12),
-                          ),
-                        ),
-                      ),
-                    ],
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              AppLogo(height: 150),
+              SizedBox(height: 20),
+              //Texts and Styling of them
+              Text(
+                'Welcome to AmaraJajabor !',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 28),
+              ),
+              SizedBox(height: 20),
+              Text(
+                'A one-stop portal for you to learn the latest technologies from SCRATCH',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 16),
+              ),
+              SizedBox(height: 30),
+              SizedBox(
+                // 👈 Makes it full width
+                child: OutlinedButton.icon(
+                  onPressed: controller.googleSignIn,
+                  icon: Image.asset(TImages.google, height: 20),
+                  label: const Text('Sign in with Google'),
+                  style: OutlinedButton.styleFrom(
+                    padding: const EdgeInsets.all(12),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

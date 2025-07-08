@@ -3,10 +3,8 @@
 /// This class contains all the App Images in String formats.
 class TImages {
   // -- App Logos
-  static const String darkAppLogo =
-      "assets/logos/t-store-splash-logo-black.png";
-  static const String lightAppLogo =
-      "assets/logos/t-store-splash-logo-white.png";
+  static const String darkAppLogo = "assets/images/logo_black.png";
+  static const String lightAppLogo = "assets/images/logo_white.png";
 
   // -- Social Logos
   static const String google = "assets/images/google.png";
@@ -57,6 +55,7 @@ class TImages {
       "assets/images/animations/sammy-line-man-receives-a-mail.png";
   static const String verifyIllustration =
       "assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif";
+  static const String loadingIllustration = "assets/animations/loading.json";
 
   // -- OnBoarding Texts
   static const String onBoardingImage1 =
